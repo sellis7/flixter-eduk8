@@ -29,6 +29,11 @@ gem 'bootstrap-sass', '~> 3.3.6'
 # Install Sprockets
 gem 'sprockets', '~> 2.0'
 
+# Enabling Devise for user authentication
+gem 'devise', '>= 3.2.4'
+
+gem 'factory_girl_rails', '~> 4.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

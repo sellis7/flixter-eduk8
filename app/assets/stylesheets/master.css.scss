@@ -7,7 +7,9 @@ h1, h2, h3, h4, h5, h6, .navbar {
 }
 
 body {
-		background: url('paper_2.png');
+		/* Trebuchet-based sans serif stack */
+		font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+		//padding-bottom: 80px; WAS FOR MY OWN STICKY FOOTER
 }
 
 /* NAVIGATION */
@@ -73,4 +75,12 @@ body {
 
 .btn {
   border-radius:0;
+}
+
+.features {
+	margin-top: 20px;
+}
+
+.clr {
+	clear: both;
 }
