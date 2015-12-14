@@ -2,6 +2,7 @@ Rails.application.routes.draw do  # Flixter
 
   devise_for :users
   root to: 'static_pgs#index'
+  resources :courses, :only => [:index, :show]
   namespace :instructor do
     resources :courses, :only => [:new, :create, :show]
   end
