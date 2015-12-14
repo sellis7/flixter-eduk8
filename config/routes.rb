@@ -2,6 +2,9 @@ Rails.application.routes.draw do  # Flixter
 
   devise_for :users
   root to: 'static_pgs#index'
+  namespace :instructor do
+    resources :courses, :only => [:new, :create, :show]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

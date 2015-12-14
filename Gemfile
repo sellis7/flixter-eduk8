@@ -32,7 +32,11 @@ gem 'sprockets', '~> 2.0'
 # Enabling Devise for user authentication
 gem 'devise', '>= 3.2.4'
 
+# FactoryGirl for quick factories application
 gem 'factory_girl_rails', '~> 4.0'
+
+# SimpleForm
+gem 'simple_form'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
