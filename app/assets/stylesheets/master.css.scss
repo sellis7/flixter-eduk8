@@ -3,13 +3,18 @@
 	padding: 0;
 }
 h1, h2, h3, h4, h5, h6, .navbar {
-  margin:0;
+  margin: 0;
 }
 
 body {
 		/* Trebuchet-based sans serif stack */
 		font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
 		//padding-bottom: 80px; WAS FOR MY OWN STICKY FOOTER
+}
+
+/* TO PUSH DOWN ALL CONTENT ON PAGES FROM NAVBAR */
+header {
+	margin-top: 40px;
 }
 
 /* NAVIGATION */
@@ -94,5 +99,38 @@ body {
 }
 
 .bounding-box {
-	//this needs to be established!!!
+	padding: 20px;
+	border: 6px inset;
+	background-color: rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0px 0px 20px 1px #575656;
+  -webkit-box-shadow: 0px 0px 20px 1px #575656;
+	box-shadow: inset 0px 0px 20px 1px #575656;
+
+	// background:#EDEDED; - BEVELED EDGE - Another awesome effect!
+	// border: 1px solid #ccc;
+	// box-shadow: -1px 1px 0px 1px rgba(88, 88, 88, 0.5),
+	// -2px 2px 0px 1px rgba(88, 88, 88, 0.5),
+	// -3px 3px 0px 1px rgba(88, 88, 88, 0.5),
+	// -4px 4px 0px 1px rgba(88, 88, 88, 0.5),
+	// -5px 5px 0px 1px rgba(88, 88, 88, 0.5);
+
+	// color: white; MULTI BORDERS - keep! Awesome effect!
+	// border: 5px solid #666;
+  // padding: 5px;
+  // background: #333;
+  // outline: 5px solid #999;
+  // box-shadow: 0 0 0 10px #ccc, 0 0 0 15px #e6e6e6;
+}
+
+.bounding-box > h1,
+.bounding-box > h2 a {
+	color: #b80000;
+	text-shadow: 0px 0px 8px #fff;
+}
+
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
