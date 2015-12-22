@@ -41,8 +41,8 @@ gem 'simple_form'
 #  Figaro for ENV secure app configurations - run "bundle exec figaro install"
 gem 'figaro', '>= 1.0.0'
 
-# Install CarrierWave for image uploads
-gem 'carrierwave'
+# Install CarrierWave for image AND VIDEO uploads
+gem 'carrierwave-aws'
 
 # Enabling Fog for CarrierWave interaction with AmazonS3
 gem 'fog', '>= 1.5.11'
