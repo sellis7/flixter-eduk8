@@ -38,6 +38,18 @@ gem 'factory_girl_rails', '~> 4.0'
 # SimpleForm
 gem 'simple_form'
 
+#  Figaro for ENV secure app configurations - run "bundle exec figaro install"
+gem 'figaro', '>= 1.0.0'
+
+# Install CarrierWave for image uploads
+gem 'carrierwave'
+
+# Enabling Fog for CarrierWave interaction with AmazonS3
+gem 'fog', '>= 1.5.11'
+
+# Install MiniMagick to run with ImageMagick
+gem 'mini_magick', '~> 4.3', '>= 4.3.6'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

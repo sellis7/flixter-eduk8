@@ -4,6 +4,9 @@
 </header>
 	<% @courses.each do |course| %>
 		<div class="bounding-box col-xs-10 col-xs-offset-1">
+			<% if course.image.present? %>
+				<%= img_tag course.image, :class => 'img-responsive' %>
+			<% end %> <!-- THIS WILL NEED TO BE A THUMBNAIL IMG!!!!!  -->
 			<h2><%= link_to course.title, course_path(course) %></h2>
 			<br />
 			<div class="col-sm-8 col-xs-12">
