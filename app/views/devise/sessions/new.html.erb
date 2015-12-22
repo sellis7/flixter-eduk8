@@ -1,8 +1,10 @@
 <header>
-  <h2>Log in</h2>
 </header>
 
 <div class="bounding-box col-xs-10 col-xs-offset-1 form">
+    <h2>Log in</h2>
+    <hr />
+
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
     <div class="form-inputs">
@@ -16,7 +18,8 @@
     </div>
   <% end %>
   <br />
-  <div class="text-center">
-    <%= render "devise/shared/links" %>
-  </div>
+</div>
+<div class="text-center col-xs-10 col-xs-offset-1">
+  <br />
+  <%= render "devise/shared/links" %>
 </div>
