@@ -3,7 +3,7 @@
 
 <div class="bounding-box col-xs-10 col-xs-offset-1">
 	<% if @course.image.present? %>
-		<%= img_tag @course.image, :class => 'img-responsive' %>
+		<%= image_tag @course.image, :class => 'img-responsive' %>
 	<% end %>
 	<h1><%= @course.title %></h1>student view
 	<hr />
@@ -19,22 +19,25 @@
 	</div>
 	<div class="col-sm-9 col-xs-12">
 		<%= @course.description %>
-		<hr />
 	</div>
 
 	<div class="col-xs-12 col-sm-9 col-sm-offset-3">
 		<% @course.sections.each do |section| %>
+		<br />
 			<div class="section">
-				<%= section.title %>
+				<h3><%= section.title %></h3>
 				<% section.lessons.each do |lesson| %>
-					<div class="lesson">
-						<%= link_to lesson_path(lesson) do %>
-							<b><%= lesson.title %></b>
-							-
-							<%= lesson.subtitle %>
-						<% end %>
+					<div class=" col-xs-12 col-sm-6">
+						<div class="lesson text-center">
+							<%= link_to lesson_path(lesson) do %>
+								<b><%= lesson.title %></b>
+								<br />
+								– <%= lesson.subtitle %>
+							<% end %>
+						</div>
 					</div>
 				<% end %>
+				<br class="clr" />
 			</div>
 		<% end %>
 	</div>
