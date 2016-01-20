@@ -17,7 +17,7 @@ class EnrollmentsController < ApplicationController
 
 		  charge = Stripe::Charge.create(
 		    :customer    => customer.id,
-		    :amount      => @amount,
+		    :amount      => @amount, # Can never be less than .50
 		    :description => 'Flixter-EDUK8 Course Content',
 		    :currency    => 'usd'
 		  )

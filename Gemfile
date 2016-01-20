@@ -53,6 +53,9 @@ gem 'mini_magick', '~> 4.3', '>= 4.3.6'
 # Install Stripe for credit card pymts
 gem 'stripe'
 
+# Ability to reorder database entries
+gem 'ranked-model'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
