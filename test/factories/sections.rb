@@ -3,7 +3,6 @@ FactoryGirl.define do
     title "Intermediate"
     course_id 1
 
-    association :user
     association :course
 
   end

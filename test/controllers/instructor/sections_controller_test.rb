@@ -5,13 +5,13 @@ class Instructor::SectionsControllerTest < ActionController::TestCase
   #   assert true
   # end
 
-  test "can access section?" do
-    #user = FactoryGirl.create(:user) NEED TO MODIFY FACTORY FOR MULTIPLE EMAILS
-    sign_in user
-    course = FactoryGirl.create(:course, :user => user)
-    section = FactoryGirl.create(:section, :course => course)
-
-    redirect_to instructor_course_path(@course)
-  end
+  # test "can access section?" do
+  #   user = FactoryGirl.create(:user) 
+  #   sign_in user
+  #   course = FactoryGirl.create(:course, user: user)
+  #   section = FactoryGirl.create(:section, course: course)
+  #
+  #   redirect_to instructor_course_path(course)
+  # end
 
 end

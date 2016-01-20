@@ -5,12 +5,11 @@ class UserTest < ActiveSupport::TestCase
   #   assert true
   # end
 
-
-  # test "able to log in?" do   -WILL HAVE TO WORK ON THIS
-  #   assert_difference 'User.count' do
-  #     user = FactoryGirl.create(:user)
-	# 	end
-	# 	assert_equal 1, user.count
-  # end
+  test "able to log in?" do
+    assert_difference 'User.count' do
+      user = FactoryGirl.create(:user)
+		end
+		assert_equal 1, User.count
+  end # PASSES
 
 end
