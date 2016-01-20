@@ -50,6 +50,9 @@ gem 'fog', '>= 1.5.11'
 # Install MiniMagick to run with ImageMagick
 gem 'mini_magick', '~> 4.3', '>= 4.3.6'
 
+# Install Stripe for credit card pymts
+gem 'stripe'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

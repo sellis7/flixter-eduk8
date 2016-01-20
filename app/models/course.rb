@@ -13,4 +13,8 @@ class Course < ActiveRecord::Base
 		"$%.2f" % self.cost
 	end
 
+	def free?
+		cost.zero?
+	end
+
 end
