@@ -56,6 +56,9 @@ gem 'stripe'
 # Ability to reorder database entries
 gem 'ranked-model'
 
+# Production assests more efficient; more useful Heroku error logs
+gem 'rails_12factor', group: :production
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -69,6 +72,9 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'shoulda', '~> 3.5'
+
+  # Gonna experiment with RSpec rather than TestUnit
+  gem 'rspec-rails', '~> 3.0'
 end
 
 group :development do
