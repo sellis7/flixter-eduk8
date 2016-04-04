@@ -6,34 +6,30 @@
 	<% end %>
 	<h1 class="text-center"><%= current_course.title %></h1>
 	<hr />
-	<br />
 	<!-- MAKE THIS INTO A POPOUT WINDOW LATER -->
-	<%= link_to 'Preview as Student...', course_path(current_course), :class => 'btn btn-warning pull-right' %>
-	<br class='clr' />
-
 	<div class="text-center">
 		<%= link_to 'Add a section', new_instructor_course_section_path(current_course),
 		:class => 'btn btn-primary btn-lg' %>
+		<%= link_to 'Preview as Student', course_path(current_course), :class => 'btn btn-warning btn-lg' %>
 	</div>
 
 	<ul class="sections">
 		<% current_course.sections.rank(:row_order).each do |section| %>
-			<li data-update-url="<%= instructor_section_path(section) %>">
-				<%= section.title %>
-				<hr />
-				<%= link_to 'New Lesson', new_instructor_section_lesson_path(section),
-					:class => 'pull-right btn btn-primary btn-xs' %>
-					<br class="clr" />
-					<ul class="lessons">
-						<% section.lessons.rank(:row_order).each do |lesson| %>
-						<li data-update-url="<%= instructor_lesson_path(lesson) %>">
-							<b><%= lesson.title %></b>
-							-
-							<%= lesson.subtitle %>
-						</li>
-						<% end %>
-					</ul>
-					<br class="clr" />
+			<li data-update-url="<%= instructor_section_path(section) %>" class="section">
+				<h3><span class="glyphicon glyphicon-sort"></span>
+				<%= section.title %></h3>
+				<ul class="lessons">
+					<% section.lessons.rank(:row_order).each do |lesson| %>
+					<li data-update-url="<%= instructor_lesson_path(lesson) %>" class="lesson">
+						<p><span class="glyphicon glyphicon-sort"></span>
+						<b><%= lesson.title %></b></p>
+						<p>&nbsp;&nbsp;&nbsp;<%= lesson.subtitle %></p>
+					</li>
+					<% end %>
+					<%= link_to 'New Lesson', new_instructor_section_lesson_path(section),
+						:class => 'pull-right btn btn-primary btn-xs admin-lesson' %>
+				</ul>
+				<br class="clr" />
 			</li>
 		<% end %>
 	</ul>

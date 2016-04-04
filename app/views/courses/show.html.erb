@@ -4,7 +4,6 @@
 <div class="bounding-box col-xs-10 col-xs-offset-1">
 	<% if @course.image.present? %>
 		<%= image_tag @course.image, :class => 'img-responsive' %>
-		<br />
 	<% end %>
 	<h1><%= @course.title %></h1>student view
 	<hr />
@@ -46,7 +45,6 @@
 
 	<div class="col-xs-12">
 		<% @course.sections.rank(:row_order).each do |section| %>
-		<br />
 			<div class="section">
 				<h3><%= section.title %></h3>
 				<% section.lessons.rank(:row_order).each do |lesson| %>
