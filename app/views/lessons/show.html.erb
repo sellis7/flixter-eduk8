@@ -5,19 +5,21 @@
 	<p>
 		<%= current_lesson.subtitle %>
 	</p>
-	<% if current_lesson.video.present? %>
-		<!-- VideoJS embedded capability here -->
-		<video id="my-video" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid"
-		controls preload="auto" width="auto" height="auto" poster="/assets/Please_Stand_By.jpg" data-setup="{}">
-	    <source src="<%= current_lesson.video.to_s %>" type='video/mp4'>
-	    <!-- <source src="MY_VIDEO.webm" type='video/webm'> -"transcode" for use in both formats -->
-	    <p class="vjs-no-js">
-	      To view this video please enable JavaScript, and consider upgrading to a web browser that
-	      <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-	    </p>
-	  </video>
-	<% else %>
-		<%= link_to 'Video', current_lesson.video.to_s %>
-	<% end %>
+	<div>
+		<% if current_lesson.video.present? %>
+			<!-- VideoJS embedded capability here -->
+			<video id="my-video" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid"
+			controls preload="auto" width="auto" height="auto" poster="/assets/Please_Stand_By.jpg" data-setup="{}">
+		    <source src="<%= current_lesson.video.to_s %>" type='video/mp4'>
+		    <!-- <source src="MY_VIDEO.webm" type='video/webm'> -"transcode" for use in both formats -->
+		    <p class="vjs-no-js">
+		      To view this video please enable JavaScript, and consider upgrading to a web browser that
+		      <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+		    </p>
+		  </video>
+		<% else %>
+			<%= link_to 'Video', current_lesson.video.to_s %>
+		<% end %>
+	</div>
 
 </div>
