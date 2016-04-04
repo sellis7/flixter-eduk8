@@ -1,10 +1,17 @@
 <header>
 </header>
 <div class="bounding-box col-xs-10 col-xs-offset-1">
-	<h1><%= current_lesson.title %> - student view</h1>
+	<h1><%= current_lesson.title %></h1>
 	<p>
 		<%= current_lesson.subtitle %>
+		<% if current_lesson.next_lesson.present? %>
+			<%= link_to lesson_path(current_lesson.next_lesson), class: 'btn btn-default btn-sm pull-right' do %>
+			Next lesson&nbsp;
+			<span class="glyphicon glyphicon-forward"></span>
+			<% end %>
+		<% end %>
 	</p>
+	<br />
 	<div>
 		<% if current_lesson.video.present? %>
 			<!-- VideoJS embedded capability here -->
