@@ -6,10 +6,8 @@
 	<% end %>
 	<h1 class="text-center"><%= current_course.title %></h1>
 	<hr />
-	<!-- MAKE THIS INTO A POPOUT WINDOW LATER -->
 	<div class="text-center">
-		<!-- Button trigger modal -->
-		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newSectionModal">
+		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newSectionModal">
 		  Add a Section
 		</button>
 		<%= link_to 'Preview as Student', course_path(current_course), :class => 'btn btn-warning btn-lg' %>
@@ -28,13 +26,38 @@
 						<p>&nbsp;&nbsp;&nbsp;<%= lesson.subtitle %></p>
 					</li>
 					<% end %>
-					<%= link_to 'New Lesson', new_instructor_section_lesson_path(section),
-						:class => 'pull-right btn btn-primary btn-xs admin-lesson' %>
+					<button class="pull-right btn btn-primary btn-sm admin-lesson" data-toggle="modal" data-target="#newLessonModal" data-lesson-url="<%= instructor_section_lessons_path(section) %>">
+					  New Lesson
+					</button>
 				</ul>
 				<br class="clr" />
 			</li>
 		<% end %>
 	</ul>
+</div>
+
+<div id="newLessonModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="newLessonModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="newLessonModalLabel">New Lesson Here</h4>
+      </div>
+			<%= simple_form_for @lesson, :url => "#", html: {id: 'newLessonForm'} do |f| %>
+      <div class="modal-body">
+					<%= f.input :title %>
+					<br />
+					<%= f.input :subtitle %>
+					<br />
+					<%= f.input :video %>
+      </div>
+			<div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <%= f.submit "Add Lesson", :class => 'btn btn-primary' %>
+      </div>
+			<% end %>
+    </div>
+  </div>
 </div>
 
 <div id="newSectionModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="newSectionModalLabel" aria-hidden="true">
@@ -58,6 +81,11 @@
 </div><!-- /.modal -->
 
 <script>
+	$('.admin-lesson').click(function(event) {
+		var lessonUrl = $(event.target).data('lesson-url');
+		$('#newLessonForm').attr('action', lessonUrl);
+	});
+
 	$(function() {
 		$('.sections').sortable({
 			update: function(event, ui) {
