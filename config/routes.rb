@@ -2,7 +2,8 @@ Rails.application.routes.draw do  # Flixter
 
   devise_for :users
   resource :dashboard, only: [:show]
-  root to: 'static_pgs#index'
+  root 'static_pgs#index'
+  get 'privacy', to: 'static_pgs#privacy'
   resources :courses, :only => [:index, :show] do
     resources :enrollments, :only => :create
   end
