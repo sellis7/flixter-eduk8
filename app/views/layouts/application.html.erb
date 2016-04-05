@@ -73,9 +73,44 @@
 </div> <!--  wrap -->
 <div id="footer">
   <div class="container">
-    <b>Teachers</b>
-    <br />
-    <%= link_to 'Create a course', new_instructor_course_path %>
+    <div class="col-xs-6 col-sm-3">
+      <b>Teachers</b>
+      <br />
+      <%= link_to 'Create a course', new_instructor_course_path %>
+      <br />
+      <%= link_to "My Dashboard", dashboard_path %>
+    </div>
+    <div class="col-xs-6 col-sm-3">
+      <b>About</b>
+      <br />
+      <%= link_to 'Team', "#" %>
+      <br />
+      <%= link_to 'Careers', "#" %>
+      <br />
+      <%= link_to 'Privacy', "#" %>
+    </div>
+    <div class="col-xs-6 col-sm-3">
+      <b>Contact</b>
+      <br />
+      educate@email.com
+      <br />
+      Bradbury Apts., Ninth Sector
+      <br />
+      N.F. 46751
+    </div>
+    <div class="col-xs-6 col-sm-3 social">
+      <b>Social</b>
+      <br />
+      <%= link_to 'https://twitter.com/architect_of' do %>
+        <%= image_tag '1459883655_twitter.png', class: 'social-btn' %>
+      <% end %>
+      <%= link_to 'https://github.com/sellis7' do %>
+        <%= image_tag '1459884337_github_circle_black.png', class: 'social-btn' %>
+      <% end %>
+      <%= link_to 'https://www.linkedin.com/in/s-ellis-60575662' do %>
+        <%= image_tag '1459883735_linkedin.png', class: 'social-btn' %>
+      <% end %>
+    </div>
   </div>
 </div>
 

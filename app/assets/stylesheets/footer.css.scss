@@ -1,4 +1,5 @@
 $footer-height: 100px; //SCSS simplification, implemented
+$footer-height-mobile: 200px;
 
 html,
 body {
@@ -18,15 +19,37 @@ body {
 
 /* Setting fixed height of footer */
 #footer {
+	padding: 10px 0px;
 	height: $footer-height;
 	color: white;
 	background-color: rgba(36, 32, 33, 0.9);
 	font-family: "Helvetica Neue", Helvetica;
-	padding: 10px 0px;
+	font-weight: 100;
+	letter-spacing: 1.5px;
 	// margin-top: 30px; NOT USING - APPLIED BKGD TO 'WRAP' CLASS
 }
 
 #footer a {
 	color: white;
-	font-weight: 100;
+}
+
+.social-btn {
+	margin: 3px;
+}
+
+.social a:hover {
+	text-decoration: none;
+}
+
+@media (max-width: 750px) {
+	#footer {
+		height: $footer-height-mobile;
+	}
+	#wrap {
+		margin: 0 auto -$footer-height-mobile;
+		padding: 0 0 $footer-height-mobile;
+	}
+	#footer .social {
+		margin-top: 10px;
+	}
 }
