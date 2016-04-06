@@ -58,6 +58,8 @@ gem 'stripe'
 # Ability to reorder database entries
 gem 'ranked-model'
 
+gem 'seed_dump', '~> 3.2', '>= 3.2.4'
+
 # Production assests more efficient; more useful Heroku error logs
 gem 'rails_12factor', group: :production
 

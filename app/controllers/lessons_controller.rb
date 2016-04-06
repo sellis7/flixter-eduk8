@@ -13,9 +13,13 @@ class LessonsController < ApplicationController
 	end
 
 	def require_authorized_for_current_lesson
-		if !current_user.enrolled_in?(current_lesson.section.course)
-			redirect_to course_path(current_lesson.section.course), :alert => 'Lesson content only viewable when enrolled.'
+		if !lesson_access
+				redirect_to course_path(current_lesson.section.course), :alert => 'Lesson content only viewable when enrolled.'
 		end
+	end
+
+	def lesson_access
+		current_user.enrolled_in?(current_lesson.section.course) || current_user.id == current_lesson.section.course.user_id
 	end
 
 end

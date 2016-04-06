@@ -23,7 +23,7 @@
 					<li data-update-url="<%= instructor_lesson_path(lesson) %>" class="lesson">
 						<p><span class="glyphicon glyphicon-sort"></span>
 						<b><%= lesson.title %></b></p>
-						<p>&nbsp;&nbsp;&nbsp;<%= lesson.subtitle %></p>
+						<p>&nbsp;&nbsp;&nbsp;— <%= lesson.subtitle %></p>
 					</li>
 					<% end %>
 					<button class="pull-right btn btn-primary btn-sm admin-lesson" data-toggle="modal" data-target="#newLessonModal" data-lesson-url="<%= instructor_section_lessons_path(section) %>">
