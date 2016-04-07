@@ -169,9 +169,10 @@ li.lesson b {
 	font-size: 1.35em;
 }
 
-#my-video {
+div.video-content {
 	margin: 10px auto 0 auto;
-	max-width: 85%;
+	max-width: 720px;
+	width: 85%;
 }
 
 .section {
