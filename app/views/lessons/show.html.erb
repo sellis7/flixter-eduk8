@@ -9,9 +9,9 @@
 			Next lesson&nbsp;
 			<span class="glyphicon glyphicon-forward"></span>
 			<% end %>
+			<br class="clr"/>
 		<% end %>
 	</p>
-	<div class="col-xs-10 col-xs-offset-1">
 		<% if current_lesson.video.present? %>
 			<!-- VideoJS embedded capability here -->
 			<video id="my-video" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid"
@@ -26,7 +26,5 @@
 		<% else %>
 			<%= link_to 'Video', current_lesson.video.to_s %>
 		<% end %>
-		<br />
-	</div>
-
+	<br />
 </div>
